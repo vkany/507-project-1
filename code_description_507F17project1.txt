@@ -67,3 +67,4 @@ Note that this description covers what the code SHOULD do. It may be very slight
 * You must include at least 12 test methods. You may include as many test suite subclasses as you like in that file, but it's nice to make it well-organized -- good practice!
 
 * There are 3 bugs in the cards code -- 3 things that don't work exactly as this description says they ought to. Your tests should help you find out what is wrong with it -- so at least 3 of your test methods should fail. If more fail, it should be the case that multiple test methods are addressing the same issue in the code.
+
