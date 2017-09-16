@@ -30,15 +30,54 @@ class CardTest(unittest.TestCase):
     def test5(self):
         self.assertEqual(str(self.card), 'King of Hearts') #The Card class has a string method, which should return a string e.g. "Ace of Spades" or "3 of Clubs", etc.
 
+    def tearDown(self):
+        self.card = Card(2, 13)
+
 class DeckTest(unittest.TestCase):
 
     def setUp(self):
         self.d = Deck()
+        self.card = Card(2, 13)
 
     def test6(self):
-        self.assertEqual(type(self.d.cards), list)
+        self.assertEqual(type(self.d.cards),list)
 
-    # def test8(self):
+    def test7(self):
+        self.assertTrue(self.d.pop_card(), self.card not in self.d.cards)
+
+    def test8(self):
+        self.assertTrue(self.d.shuffle == random(self.d.cards) )
+
+    def test9(self):
+        for card_instance in self.card:
+            self.assertIsInstance(self.card[0],Card)
+
+    def test10(self):
+        self.assertEqual(str(self.d),)
 
 
+class WarGameTest(unittest.TestCase):
+
+    def setUp(self):
+        self.war = play_war_game (testing=True)
+
+    def test11(self):
+        self.assertEqual(type(self.war),tuple)
+
+class SongTest(unittest.TestCase):
+
+    def setUp(self):
+        self.song = show_song()
+        self.song2 = show_song("Shake it off")
+
+    def test13(self):
+        self.assertEqual(self.song2.artist,"Taylor Swift")
+
+    def test14(self):
+        self.assertEqual((str(self.song)),"{} by {} on {} whose URL is {}".format(self.song.track, self.song.artist, self.song.album, self.song.track_url))
+
+
+
+
+# if __name__=='__main__':
 unittest.main(verbosity=2)
